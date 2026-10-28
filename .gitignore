@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+playwright-report/
+.env
+extracted-candidate-storage.json
+*.log
+.DS_Store
