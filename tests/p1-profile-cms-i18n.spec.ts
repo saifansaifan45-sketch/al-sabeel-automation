@@ -50,8 +50,8 @@ test.describe('7. Important P1 checks — Profile, i18n & Responsiveness', () =>
     await loginAsCandidate(page, context);
     await page.goto('/seeker/dashboard', { waitUntil: 'networkidle' });
 
-    // Ensure responsive bottom navigation or mobile menu exists
-    const nav = page.locator('nav, header, footer, [role="navigation"]').first();
-    await expect(nav).toBeVisible();
+    // Ensure responsive bottom navigation bar is visible on mobile viewports
+    const bottomNav = page.locator('nav').filter({ has: page.getByRole('link', { name: 'Home' }) }).first();
+    await expect(bottomNav).toBeVisible();
   });
 });
